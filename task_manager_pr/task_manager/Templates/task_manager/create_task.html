@@ -1,0 +1,13 @@
+{% extends "task_manager/base_generic.html" %}
+
+{% block title %}Create Task - Task Manager{% endblock %}
+{% block heading %}Create Task{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{% url 'task_manager:index' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
